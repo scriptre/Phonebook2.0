@@ -1,8 +1,10 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3000/persons'
+const baseUrl = 'http://localhost:3000/api/persons'
+
 
 const getAll = () => {
     const request = axios.get(baseUrl)
+    console.log('get request in services',request)
     return request.then(response => response.data)
   }
   

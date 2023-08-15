@@ -1,13 +1,8 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import personService from './services/persons'
-import Persons from './components/Persons'
-import PersonForm from './components/PersonForm'
 import Filter from './components/Filter'
-
-
-
-
+import PersonForm from './components/PersonForm'
+import Persons from './components/Persons'
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
@@ -22,7 +17,7 @@ const App = () => {
     personService
       .getAll()
       .then(originPersons => {
-        console.log(originPersons)
+        console.log('Response Data:', originPersons)
         setPersons(originPersons)
       })
   },[])
@@ -141,7 +136,7 @@ const App = () => {
       />
 
       <h2>Numbers</h2>
-      {/* <Persons filterCopy={filterCopy} handleDelete={handleDelete} /> */}
+    
       <div>
         {filterCopy.map(person => 
 
